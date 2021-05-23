@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Carleton Voting Comps</title>
+      <title>Threat Model</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/icons.css">
       <link rel="stylesheet" href="css/responsee.css">
@@ -109,32 +109,23 @@
                </aside>
                <!-- CONTENT -->
                <section class="s-12 l-6">
-                  <h1>Content</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet 
-                     dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                     lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit 
-                     esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim 
-                     qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta 
-                     nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem 
-                     insitam;
-                     est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius 
-                     quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum 
-                     est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula 
-                     quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-                  </p>
-                  <h2>Sub Header</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet 
-                     dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                     lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit 
-                     esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim 
-                     qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta 
-                     nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem 
-                     insitam;
-                     est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius 
-                     quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum 
-                     est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula 
-                     quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-                  </p>
+                  <h1>Developing a Threat Model for Online Voting Systems</h1>
+				  <p>To conduct a risk assessment of the Helios Voting system, we must first shift our attention towards the goals involved in securing the electoral process. By shaping a discussion around the components of an online election, we can begin to identify and assess the risks of certain vulnerabilities in the electoral process from the perspective of a potential adversary. To do so, we’ll use the CIA triad — a conceptual cybersecurity model which “highlights core data security objectives and serves as a guide for organizations to keep [their] sensitive data protected from unauthorized access and data exfiltration” —  as a framework of reference for approaching system security analysis. The Elections Infrastructure Information Sharing and Analysis Center™ (EI-ISAC®) explained the relevance and application of the CIA triad to Elections Infrastructure security in one of their “Cybersecurity Spotlights,” claiming that “every cyber attack attempts to violate at least one of the CIA triad attributes.” They continued, “Having a thorough understanding of this information security model helps election offices better identify risks and protect their networks from unauthorized activity through appropriate cybersecurity policies and mitigation measures.” (EI-ISAC) The triad is based on an acronym that reflects the key underlying design principles of secure online systems. The first letter of the acronym represents “Confidentiality,” meaning that data should be accessible only to authorized parties. Next, “Integrity” can be understood as ensuring that data and information are stored reliably and presented accurately. The last principle of the triad, “Availability,” describes that certain data, information, and processes are accessible and available to all agents of an organization, as accorded by their roles and responsibilities.</p>
+				  <p>These principles all contribute to the desired goal of public trust, a key component in the perceived success of elections. Public trust can be evaluated by the level at which voters have faith in the processes and results of an election. Throughout the rest of the discussion, we’ll use the CIA triad both as a frame of reference from which we can evaluate Helios’ underlying security measures and as a model to guide the discussion of EVM security. Below, we identify some of the core objectives that Helios and online voting systems must offer, with respect to the principles defined above:
+				  <ul>
+					  <li>Conﬁdentiality: Result isn’t published until after an election period ends</li>
+					  <li>Integrity: Individual votes are recorded accurately and the election result is correctly tallied</li>
+					  <li>Availability: Voting methods must be equally available to all eligible voters </li>
+				  </ul>
+				  Using the concepts derived from the CIA model and the set of objectives defined by the functions and parameters of a public election, we can thresh out a more cohesive threat model and assess the set of potential vulnerabilities for Helios and other similarly related online voting systems. </p>
+
+				  <h1>The Threat Model</h1>
+				  <p>In Towards Trustworthy Elections (Chaum et al., 2010), Juels, Catalano, and Jakobsson’s chapter “Coercion-Resistant Electronic Elections” praises the accuracy and accessibility of new voting systems, but warns of increasing opportunities for manipulation. The threats that electronic voting systems face include old threats like coercion and corrupt officials, but also include code-based issues and questions of trust. Without paper ballots and a physical chain of custody, new levels of transparency and auditability are necessary.</p>
+				  <p>In Helios’ original peer-reviewed documentation, developer Ben Adida very clearly states that the voting system should be used within the context of low-coercion elections. That is, Helios doesn’t actually specify or provide any security measures to deal with certain threats, such as over-the-shoulder coercion or client-side malware.</p>
+				  <p>In our examination of Helios, we sought to explore how coercion, corruption, code exploits, and public trust threaten electronic voting systems and lead to limitations on the use of systems like Helios in high-stakes cases.</p>
+
+
+
                </section>
                <!-- ASIDE NAV 2 -->
             </div>
