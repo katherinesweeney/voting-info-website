@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Free responsive template with sidebar</title>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/icons.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="css/template-style.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+   </head>
+   <body class="size-1280">
+      <!-- TOP NAV WITH LOGO -->
+      <header>
+         <nav>
+            <div class="line">
+               <div class="m-12 l-2">
+                  <img class="s-5 m-2 l-12 center" src="img/logo.svg">
+               </div>
+               <div class="top-nav s-12 l-10 right">
+
+                  <ul class="right">
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>General Info</a>
+                        <ul>
+							<li><a href="evm.html">Electronic Voting Machines</a></li>
+                           <li><a href="secureElection.html">Making a Secure Election</a></li>
+                           <li>
+                              <a href="accurateVote.html">Keeping Your Vote Accurate</a>
+                           </li>
+						   <li><a href="privateVote.html">Keeping Your Vote Private</a></li>
+						   <li><a href="audit.html">Recounts and Audits</a></li>
+						   <li><a href="accessibility.html">Accessibility</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a>Threats</a>
+                        <ul>
+                           <li><a href="threatModel.html">Threat Model</a></li>
+                           <li><a href="cortier.html">Cortier/Smyth Attack</a></li>
+						   <li><a href="registration.html">Fraudulent Registration</a></li>
+						   <li><a href="votingCenter.html">Voting Centers</a></li>
+                        </ul>
+                     </li>
+                     <li><a>Helios</a>
+						 <ul>
+							 <li><a href="whyHelios.hmtl">Why Helios?</a></li>
+							 <li><a href="heliosBasics.html">Helios Basics</a></li>
+							 <li><a href="crypto.html">Helios Cryptography</a></li>
+							 <li><a href="modification.html">Our Modifications</a></li>
+							 <li><a href="intallation.html">Installation Guide</a><li>
+						</ul>
+					 </li>
+					 <li><a href="references.html">References</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <!-- ASIDE NAV AND CONTENT -->
+      <div class="line">
+         <div class="box  margin-bottom">
+            <div class="margin2x">
+               <!-- ASIDE NAV 1 -->
+               <aside class="s-12 l-3">
+                  <h3>Navigation</h3>
+                  <div class="aside-nav">
+                     <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>General Info</a>
+                        <ul>
+							<li><a href="evm.html">Electronic Voting Machines</a></li>
+                           <li><a href="secureElection.html">Making a Secure Election</a></li>
+                           <li>
+                              <a href="accurateVote.html">Keeping Your Vote Accurate</a>
+							<li><a href="privateVote.html">Keeping Your Vote Private</a></li>
+                           </li>
+						   <li><a href="audit.html">Recounts and Audits</a></li>
+						   <li><a href="accessibility.html">Accessibility</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a>Threats</a>
+                        <ul>
+                           <li><a href="threatModel.html">Threat Model</a></li>
+                           <li><a href="cortier.html">Cortier/Smyth Attack</a></li>
+						   <li><a href="registration.html">Fraudulent Registration</a></li>
+						   <li><a href="votingCenter.html">Voting Centers</a></li>
+                        </ul>
+                     </li>
+                     <li><a>Helios</a>
+						 <ul>
+							 <li><a href="whyHelios.hmtl">Why Helios?</a></li>
+							 <li><a href="heliosBasics.html">Helios Basics</a></li>
+							 <li><a href="crypto.html">Helios Cryptography</a></li>
+							 <li><a href="modification.html">Our Modifications</a></li>
+							 <li><a href="intallation.html">Installation Guide</a><li>
+						</ul>
+					 </li>
+					 <li><a href="references.html">References</a></li>
+                     </ul>
+                  </div>
+               </aside>
+               <!-- CONTENT -->
+               <section class="s-12 l-6">
+                  <h1>Introduction</h1>
+                  <p>Since national elections and other high-profile elections generally use dedicated voting centers, we investigated the issues directly related to these centers. Depending on the systems involved, voting centers bring a combination of social and technological threats to election security. We frame our findings through the Cybersecurity and Infrastructure Security Agency’s three-pronged criteria, as well as broader issues such as centralization. The CISA wrote in 2020 that attacks on voting machines while in use have high consequences, but are less likely to be successful than attacks on other elements of election systems (CISA, 2020, pg.1).  Even if the likelihood of catastrophic machine failure is relatively low, voting machines and voting locations are the most visible element of the electoral process.
+As we have noted throughout our research, Trusting e-voting amid experiences of electoral malpractice by Avgerou et al. sets the construction of a uniform, trustworthy election process is an important task for election officials. Voter experiences within voting locations are therefore an important consideration.
+                  </p>
+                  <h2>Issues</h2>
+                  <li>Confidentiality: Voting centers offer an advantage through in-person, ideally secret interactions between voters and the voting authority that are such a challenge in the case of web-based voting and registration. Officials must still pay attention to preserving core values like receipt-freeness and overall privacy in a public environment.</li>
+<li>Integrity and Trust: The machines, connectivity, and tallying process should provide concrete security measures and reassure voters of the accuracy of the system.</li>
+<li>Accessibility: These spaces must be prepared to accommodate a wide range of voters, not only with respect to physical and mental ability but also with consideration for time, capacity, etc.</li>
+
+                  </p>
+                  <h1>Our Research</h1>
+                  <h2>Confidentiality</h2>
+                  <p></p>
+                  <p>Before health concerns led us to change course, this project included a public election component. We examined Helios and sought to add coercion resistance and confidentiality to the system. The simplest and most reliable method we found was to adapt Helios into a physical voting center, so that we could guarantee each voter an unobserved interaction with the machine.
+</p>
+                  <p>   In his 2006 paper Simple Verifiable Elections, Josh Benaloh introduced many of the components that would eventually be realized in Helios. However, his vision for a fully auditable election was based around a traditional polling station. (Benaloh, 2006, pg. 4) Helios followed this vision with the separation of the encrypting, casting, and auditing functions. Converting Helios into a system resembling this would be a fairly straightforward task and would improve on its main weakness.</p>
+                  <p>   Chevallier-Mames et al. highlight web-voting and coercibility  in the paper On Some Incompatible Properties of Voting Schemes by declaring that universal verifiability and receipt-freeness are incompatible over public networks. (Chevallier-Mames et al., 2010, pg. 197) However, they note that if some secret interactions are allowed, votes can be both verifiable and receipt-free. Receipt-freeness is important for confidentiality, but it really means that the receipt cannot be used to reveal a vote in the presence of an observer. The voter can still receive their ballot, audit it with a supplied (and separate) auditing system, and eventually receive the hash of their submitted ballot on a receipt. This hash reveals nothing about their vote, but given that the voter can be assured of the system through the auditor, the hash later assures the voter that their vote has been included in the tally.</p>
+                  <p>   Hash-receipts are not commonplace, but machines in voting centers often produce a Voter-Verifiable Paper Audit Trail (VVPAT) that can be used for later recounts. In Electronic Elections, A Balancing Act, Rezende notes that a majority of US states and many Brazilian states (which he was studying) require VVPAT systems due to the inability of pure DRE machines to support a recount. The purported goal of VVPAT measures is “to give back to common voters – with no PhD in Computer Science – their legitimate right to supervise elections with autonomy.” (Rezende, 2010, pg. 130) In another study of EVM trust in the face of corruption, Avgerou et al. recall that India introduced VVPAT systems to its DRE machines in 2010 to improve their auditability after facing issues with public confidence in DRE reliability. (Avgerou et al., 2019, pg. 279) While giving voters a receipt that maintains confidentiality and allows some verifiability after tallying is optimal, a VVPAT system is the next-best improvement that adds physical backups to a DRE machine.
+</p>
+              <h2>Integrity and Trust</h2>
+              <p>Since in-person voting is the norm for major elections, much ink has been spilled over the issues of trust and integrity in voting centers. Compared to easily modifiable Helios webpages, DRE software tends to be more rigid and machine specific (Claassen et al., 2012, p. 233) which increases the risk of a negative experience due to neglected software. Machines with known issues are often left in operation, such as in Pennsylvania where a congressional hearing reports that 83% of counties use “unverifiable and vulnerable systems.” (Lofgren et al., 2019, p. 74) In addition, old machines inevitably reach the public through disposal and surplus sales, (Robinson and Halderman, 2011, p. 122) revealing long-dormant vulnerabilities.
+</p>
+              <p>Douglas Jones published several works on auditing polling stations in the wake of HAVA, and in the aptly-named Auditing Elections he notes that voting security should focus on adding layers so that discrepancies can be tied to a specific process. (Jones, 2004) Our study of voting center confidentiality issues included the case of Indian elections, where VVPAT systems were introduced to increase auditability. Especially in situations like Indian or Brazilian elections with local fraud issues, machines must be built to discourage and reveal manipulation by both voters, external adversaries, and election officials. (Avgerou et al., 2010, p. 279) (Rezende, 2010, p. 125). Risks from these three categories require individual consideration.</p>
+              <p>In the case of voters, the interactions allowed between voters and the machines must be restricted, so that voter access is governed by a link, card, or other single-use approval to vote. Ports and menus on the device must also be secured and accessibility handled as a separate layer to limit opportunities for direct interference.
+</p>
+              <p>Many systems (including Helios) do not allow network communication until the uploading of results, so that machines cannot be exploited during a voting period. However, the CISA paper that we based our security model around predicts that the likelihood of mid-election exploits is relatively low compared to other threats like registration (although a mid-election attack could cause much more damage.) (CISA, 2020, p. 1)
+</p>
+              <p>Finally, election officials should have limited capability to manipulate results. This can be accomplished by fully autonomous uploads of tallies, or by fully auditable elections like Helios promises. Both options reduce the necessary trust in election officials, one by removing access and the other by introducing oversight.
+</p>
+              <p>Unfortunately, many voters aren’t moved to greater trust by more obvious security measures. In one 2008 study of Dutch voters by Menno de Jong, they found that there was no difference in voter confidence between fully digital DRE voting machines and DRE machines that store a paper record (de Jong). Furthermore, they had more confidence in both types of voting machine compared to traditional paper ballots (de Jong). They also found electronic voting machines to be more user-friendly. While the study was limited in scope, there is some evidence that many voters are inclined to trust electronic voting machines until someone calls that trust into question.
+</p>
+              <h2>Availability</h2>
+              <p>The “hanging chad” controversy of the 2000 election is an example of a failure in polling station availability, as are issues with assistive technologies and overcrowding. All of these issues result in the disruption or denial of votes to eligible voters. Since voting machines must accommodate the full range of abilities and voting locations must hold up under high traffic, voting center availability is a multifaceted issue.
+</p>
+              <p>Since we cover EVM accessibility in another section, we looked at venue-specific issues. The Cybersecurity and Infrastructure Security Agency considers centralization to be a threat, but the scale is from a subset of a jurisdiction up to an entire state. However, when considering cyber-attacks, even small voting centers have a higher risk than an i-voting system like Helios. Denial-of-service attacks on a network-connected center are more of a risk as the number of voters assigned to a center increases. We found a DoS attack against our own system that uses a free program and very few commands to shut down a small server. We didn’t run this attack due to the campus restrictions around this kind of disruption, but we understand this issue as somewhat of a race between operators and attackers to filter out and detect attacks that employ increasingly complex levels of distributed activity. The FBI and CISA released an online announcement in late 2020 regarding DoS attacks against voting infrastructure, which included indirect attacks such as targeting websites that advertise voting locations and hours. These attacks are an issue, but they are not limited to voting systems and many measures are already used to discourage them.</p>
+              <h1>Recommendation</h1>
+              <p>This type of issue is one that is at the forefront of public thought. Congressional hearings on the topic have already been held on the topic, making this an acknowledged need. A proper solution to this problem requires an acknowledgement of the problems in each of confidentiality, integrity, and availability.</p>
+              <p>We have several suggestions to improve confidentiality. First, it is important that voting machines have layered security. As can be seen in other large-scale open source projects, not all vulnerabilities will be caught even with many eyes, so it is important not to rely only on a code review for code issues--we want other failsafes.</p>
+              <p>We could also improve security by implementing a parallel system similar to Helios. We didn’t find attacks that broke Helios encryption, only issues with coercion and DoS attacks. A parallel Helios-like system could provide public, encrypted election data that would not only allow encrypted tallies to be computed, but would also allow things like timestamp-distribution checks to further confirm results and highlight irregularities. If this system was Internet-based, we would recommend adding DoS protections.</p>
+              <p>To secure public trust in our integrity in the case of digitally stored records, we recommend offering some kind of hash, tracker, or fingerprint for votes so that the voter can trust that their vote has truly been counted. Additionally, our efforts to increase confidentiality would increase public trust if advertised.
+</p>
+              <p>Another suggestion for increasing availability revolves around reducing the cost of electronic voting machines. Because elections are administered at a state and local level, not a federal level, it is important the election resources be made affordable. Otherwise, low income areas could be made more vulnerable to attack due to lower quality equipment. This could be accomplished via either price fixing or federal funding.</p>
+              <p>If secure Internet-based parts of the voting process could be implemented, this would also increase availability. Streamlining the in-person portion of voting allows voters to enjoy shorter wait times, and could even allow for fewer expensive polling stations in high-density areas where it wouldn’t significantly affect travel time.</p>
+               </section>
+               <!-- ASIDE NAV 2 -->
+            </div>
+         </div>
+      </div>
+      <!-- FOOTER -->
+      <div class="line">
+        <footer class="box">
+              <div class="s-12 l-6">
+                 <p>Copyright 2019, Vision Design - graphic zoo</p>
+              </div>
+              <div class="s-12 l-6">
+                 <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+              </div>
+           </div>
+        </footer>
+      </div>
+      <script type="text/javascript" src="js/responsee.js"></script>
+   </body>
+</html>
