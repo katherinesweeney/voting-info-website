@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Free responsive template with sidebar</title>
+      <title>Helios Cryptography</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/icons.css">
       <link rel="stylesheet" href="css/responsee.css">
@@ -112,12 +112,58 @@
                   <h1>Helios Cryptography</h1>
                   <p>Here’s an introduction to the cryptographic systems in Helios. It’s important that these be made clear for a wide range of readers, since the auditability and security, and thus the trustworthiness of Helios is based on their operation.
                   </p>
-                  <h2>Topics</h2>
-                  <li>
-                    ElGamal encryption and public-key cryptography
+
+
+                    <h3>ElGamal encryption and public-key cryptography</h3>
                     <li>Basics: <p>Public key cryptography allows two parties to begin communicating securely over a public network, with no previously arranged secret codes. The discrete logarithm problem enables this by making it very hard to calculate private keys given the portions of an ElGamal cipher that are sent over public channels.</p></li>
-                    <li>See it: <img src="Assymetric Intro.png" alt="Assymetric Diagram">
-                  </li>
+                    <li>See it: <img src="Assymetric Intro.png" alt="Assymetric Diagram"></li>
+                    <li>Operation: (using the traditional Bob and Alice)
+                      <br><br><li>Bob generates a pair of numbers - a private key and a public key.</li>
+                      <li>(cyclic group and gcd)</li>
+                      <li>Bob publishes a public key group, which includes a cyclic group, his public key, and a public random number “g” raised to his private key.</li>
+                      <li>Alice selects an element from that cyclic group as her private key and computes the private component from Bob raised by her selection. This is the shared secret that will not be sent in the clear.
+</li>
+                      <li>She multiplies this number by her message and sends a package including this encryption and g raised to her selected private key.</li>
+                      <li>Bob raises Alice’s key section by his private key to get the shared secret.</li>
+                      <li>Now Bob and Alice agree on the same number without transmitting it and can encrypt and decrypt messages.</li>
+                      <li>The assumption is that it is very hard to figure out the shared secret given the public information.
+</li>
+                    </li>
+                    <br><br><li> Weaknesses: <p>ElGamal is assumed to be very strong, since it requires a previously unknown, very efficient, maybe impossible algorithm to compute the discrete log problem. For this reason, public key is generally treated as a primitive construct in discussions of Helios.
+</p>
+                <h3>Homomorphic Encryption</h3>
+                  <li>Basics: <p>Homomorphic encryption is a technique that allows a system to manipulate data while the data is encrypted, never seeing decryptions of the data. In Helios, that means we can add together 1’s and 0’s of ballot choices without decrypting a ballot. This is a key factor in the public-auditing portion of Helios, since anyone can add up the ballots without being able to decrypt them and reveal an individual voter’s choices.
+</p></li>
+<li>See it: <img src="Homomorphic Diagram.png" alt="Homomorphic Diagram"></li>
+<br><br><li>Weaknesses: <p>This provides a good deal of auditability, although ensuring that the election officials honestly decrypt the correct sum requires measures like threshold encryption and a varied pool of trustees.</p>
+              <p>All ballots should be certified as valid before this tally. Removal requires either:</p>
+              <li>The trustees decrypt the ballot and decrement the total, either manually or with a modification that supports homomorphic subtraction to create a new official tally.</li>
+              <li>The ballot is removed and the election is re-tallied.
+</li>
+<br><p>Altering the tally after the auditing process requires special attention to procedures around invalid or previously uncounted valid ballots.
+</p>
+</li>
+<h3>The Helios Encryption Process</h3>
+<li>Election Setup: <p>Helios Elections begin by creating a database entry containing a unique election id and name, a default trustee to decode the election, a set of questions, and settings for who can vote, how questions are answered, when the election starts and ends, and whether the names of voters will be visible or replaced by random strings.</p>
+<p>Closed elections have another database table that stores a list of voters with a name, id, and email for each.
+</p></li>
+<li>Trustees: <p>By default, Helios acts as a trustee. This means that the creator of an election does not have to input any information to edit or tally and election.</p>
+<p>Additional trustees can be added. Each trustee receives a public and private key, and all trustees must cooperate with the automatic Helios trustee to edit or tally the election.</p>
+<p>Helios does not currently support threshold encryption, which allows a subset of trustees to execute administrative functions.</p></li>
+
+<li>Identity: <p>Helios shows voter names by default, but can replace names with aliases to help prevent coercion and enhance privacy. Administrators can decrypt ballots, but trustees and threshold encryption can be used to prevent this.</p></li>
+<li>Casting: <p>Votes are encrypted entirely on the client’s computer, so a voter’s choices are never transmitted in the clear. Votes can be cast with provided code, but Helios’ creator recommends building a personalized casting system as a challenge. The possibility of writing your own encryption service adds to the transparency of the system.</p>
+<p>Once a vote is encrypted, an independent audit system allows a voter to spoil their vote and see what their choices were encoded as. When this is implemented in a stateless manner, the auditor cannot tell when it is being tested. This makes it hard to fool voters and encrypt votes incorrectly.</p>
+<p>These properties follow from Benaloh’s 2006 paper Simple Verifiable Elections, which recommended that election machines be split up to improve trustworthiness. Ballot generation, encryption, and auditing can all be run independently of each other.</p></li>
+<li>Tallying <p>Homomorphic tally: The response sections of all ballots are added to produce a public encrypted tally (the sum of all responses)
+</p>
+<p>Trustees decrypt the tally: All trustees perform partial decryptions, resulting in a private decrypted sum for each candidate. This sum is released, while the keys enabling decryption are kept private.</p>
+<p>Auditors verify encrypted tally: Anyone can calculate the public encrypted tally and compare it to the published version, so the election is trustworthy as long as every voter trusts at least one trustee. This assumes that trustees are sourced from opposing or neutral sides and thus have an interest in spotting and rejecting manipulation of the results.</p></li>
+<h3>Threshold Encryption</h3>
+<p>Threshold encryption allows any subset of a sufficient number of trustees to execute tallying, decrypting, and other tasks like roster modifications. This prevents individuals from changing election details without approval and also prevents elections from being held up by the loss or subversion of a minority of trustees.
+</p>
+<li>See it:<img src="Threshold Schemes.png" alt="Threshold Diagram"></li>
+
                </section>
                <!-- ASIDE NAV 2 -->
             </div>
