@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Recounts and Auddits</title>
+      <title>Why Helios?</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/icons.css">
       <link rel="stylesheet" href="css/responsee.css">
@@ -33,7 +33,7 @@
                            <li>
                               <a href="accurateVote.html">Keeping Your Vote Accurate</a>
                            </li>
-							<li><a href="privateVote.html">Keeping Your Vote Private</a></li>
+						   <li><a href="privateVote.html">Keeping Your Vote Private</a></li>
 						   <li><a href="audit.html">Recounts and Audits</a></li>
 						   <li><a href="accessibility.html">Accessibility</a></li>
                         </ul>
@@ -79,8 +79,8 @@
                            <li><a href="secureElection.html">Making a Secure Election</a></li>
                            <li>
                               <a href="accurateVote.html">Keeping Your Vote Accurate</a>
+							<li><a href="privateVote.html">Keeping Your Vote Private</a></li>
                            </li>
-						   <li><a href="privateVote.html">Keeping Your Vote Private</a></li>
 						   <li><a href="audit.html">Recounts and Audits</a></li>
 						   <li><a href="accessibility.html">Accessibility</a></li>
                         </ul>
@@ -109,20 +109,12 @@
                </aside>
                <!-- CONTENT -->
                <section class="s-12 l-6">
-				                    <h1>Recounts and Audits</h1>
+                  <h1>Why Helios?</h1>
+				  <p>We learned about Helios Voting from a Carleton CS Tea talk by Josh Benaloh. Helios is an open-source internet voting system in active development by Ben Adida and a small community of developers that was built in coordination with Mr. Benaloh. 
+Helios offers an interesting feature set, and is mostly written in Python, which made it an attractive option for exploration.
+Helios also boasts a number of academic studies, and lots of related literature like Josh Benaloh’s 2006 paper SVE, which introduced the overall structure of a Helios-like voting system.
+This popularity and access to resources made Helios an attractive option for our foray into socially distanced i-voting. We discuss some of the features that made looking into Helios worthwhile in <a href="heliosBasics.html">Helios Basics</a>.</p>
 
-				  <p>An audit and a recount of an election have similar functions, but a recount is a much more serious investment. Though both seek to verify that the original count of votes is correct, an audit will only look at a subset of the votes and use statistical analysis to determine whether the outcome is accurate, while a recount will involve actually recounting each vote. While currently most government elections include auditing for every precinct, a recount is far more costly and is only invoked if there is a reasonable challenge in regards to vote accuracy.</p>
-				  <p></p>
-				  <p>A recount for an election with some form of paper record is simple--just recount them, one-by-one, by hand. The same cannot be said for elections with only electronic records. There really isn’t a way to recount electronic records apart from using a different tallying program. It is therefore important to keep multiple independent records of votes from the beginning to ensure accuracy. (Jones, "Auditing Elections")</p>
-<p></p>
-				  <p>Audits, on the other hand, look at several different metrics looking for different kinds of flaws. The simplest kind of audit merely looks for lost votes or ballot box stuffing by comparing the number of cast votes to some other record of turnout. Most states require an independent record of turnout, so this check can be made easily with paper or electronic voting. (Jones, "Auditing Elections")</p>
-<p></p>
-				  <p>To audit the tally faster than just recounting, a random sample of ballots is selected and counted until the auditors can determine that the true winners match the reported winners with the desired degree of certainty. This allows for easy human verification of the machine tally. Like recounts, this can catch fraud in the tallying system as well as errors.</p>
-<p></p>
-				  <p>While neither of these can catch changing every record of a ballot, digital or physical, from one candidate to another, for that we rely on the extreme difficulty and the bipartisan protection of ballots and machines.</p>
-<p></p>
-<p>However, some systems, such as Helios, offer open auditing. Open auditing allows voters to audit not only their own votes, assuring themselves that their vote is correctly recorded, but also the tally of the entire election. Because anyone can audit the election, voters no longer have to trust auditors or their political observers to safeguard the election: they can do it themselves. Open audit elections delegate more power to the people.
-                  </p>
                </section>
                <!-- ASIDE NAV 2 -->
             </div>
