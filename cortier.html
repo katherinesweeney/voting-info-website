@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cortier/Smyth Attack</title>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/icons.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="css/template-style.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+   </head>
+   <body class="size-1280">
+      <!-- TOP NAV WITH LOGO -->
+      <header>
+         <nav>
+            <div class="line">
+               <div class="m-12 l-2">
+                  <img class="s-5 m-2 l-12 center" src="img/logo.svg">
+               </div>
+               <div class="top-nav s-12 l-10 right">
+
+                  <ul class="right">
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>General Info</a>
+                        <ul>
+							<li><a href="evm.html">Electronic Voting Machines</a></li>
+                           <li><a href="secureElection.html">Making a Secure Election</a></li>
+                           <li>
+                              <a href="accurateVote.html">Keeping Your Vote Accurate</a>
+                           </li>
+						   <li><a href="privateVote.html">Keeping Your Vote Private</a></li>
+						   <li><a href="audit.html">Recounts and Audits</a></li>
+						   <li><a href="accessibility.html">Accessibility</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a>Threats</a>
+                        <ul>
+                           <li><a href="threatModel.html">Threat Model</a></li>
+                           <li><a href="cortier.html">Cortier/Smyth Attack</a></li>
+						   <li><a href="registration.html">Fraudulent Registration</a></li>
+						   <li><a href="votingCenter.html">Voting Centers</a></li>
+                        </ul>
+                     </li>
+                     <li><a>Helios</a>
+						 <ul>
+							 <li><a href="whyHelios.hmtl">Why Helios?</a></li>
+							 <li><a href="heliosBasics.html">Helios Basics</a></li>
+							 <li><a href="crypto.html">Helios Cryptography</a></li>
+							 <li><a href="modification.html">Our Modifications</a></li>
+							 <li><a href="intallation.html">Installation Guide</a><li>
+						</ul>
+					 </li>
+					 <li><a href="references.html">References</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <!-- ASIDE NAV AND CONTENT -->
+      <div class="line">
+         <div class="box  margin-bottom">
+            <div class="margin2x">
+               <!-- ASIDE NAV 1 -->
+               <aside class="s-12 l-3">
+                  <h3>Navigation</h3>
+                  <div class="aside-nav">
+                     <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>General Info</a>
+                        <ul>
+							<li><a href="evm.html">Electronic Voting Machines</a></li>
+                           <li><a href="secureElection.html">Making a Secure Election</a></li>
+                           <li>
+                              <a href="accurateVote.html">Keeping Your Vote Accurate</a>
+							<li><a href="privateVote.html">Keeping Your Vote Private</a></li>
+                           </li>
+						   <li><a href="audit.html">Recounts and Audits</a></li>
+						   <li><a href="accessibility.html">Accessibility</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a>Threats</a>
+                        <ul>
+                           <li><a href="threatModel.html">Threat Model</a></li>
+                           <li><a href="cortier.html">Cortier/Smyth Attack</a></li>
+						   <li><a href="registration.html">Fraudulent Registration</a></li>
+						   <li><a href="votingCenter.html">Voting Centers</a></li>
+                        </ul>
+                     </li>
+                     <li><a>Helios</a>
+						 <ul>
+							 <li><a href="whyHelios.hmtl">Why Helios?</a></li>
+							 <li><a href="heliosBasics.html">Helios Basics</a></li>
+							 <li><a href="crypto.html">Helios Cryptography</a></li>
+							 <li><a href="modification.html">Our Modifications</a></li>
+							 <li><a href="intallation.html">Installation Guide</a><li>
+						</ul>
+					 </li>
+					 <li><a href="references.html">References</a></li>
+                     </ul>
+                  </div>
+               </aside>
+               <!-- CONTENT -->
+               <section class="s-12 l-6">
+                  <h1>Cortier/Smyth Attack</h1>
+                  <h2>Introduction</h2>
+                  <p>The open-audit nature of Helios is exhibited in publicly available encrypted ballots. An encrypted ballot is created after a voter votes; it does not contain the vote content, but can be used by the voter or anyone else to verify that the vote was recorded and tallied correctly, through, using Helios’ ballot verifier. </p>
+                  <p>In their research, Smyth and Cortier present an attack that takes advantage of the publicly available encrypted ballots to reveal an arbitrary voter’s vote. The attack replays the ballot of a target  voter by manipulating the encrypted ballot, without knowing the vote content. With sufficiently many replayed ballots, the voter’s vote may be revealed. Smyth and Cortier demonstrate the attack with 2 honest voters and 1 dishonest voter: by replaying any one of the voter’s votes, the dishonest voter can reveal their vote after the results are released.  However, they note that this attack could be used in small to medium-sized elections. Revealing ballots not only breaches voters’ privacy, but also threatens election security by allowing voters to be coerced into voting a certain way, since an adversary can check their vote. On a humorous note, this attack requires an audacious bluff on the adversaries’ part: the coercing parties must blindly vote for whoever their victim votes for. Here’s an overview of the process.</p>
+                  <h2>Our replication
+</h2>
+                  <p>We replicated the attack procedure on an election using our Helios server. Smyth used the Firefox version of Tamper Data, but we found the Chrome extension Tamper-Dev with the same functionality.
+                  </p>
+                  <p>Given an election in which the coercion target has already voted, an adversary A can use the bulletin board to download the target’s vote and its encrypted ballot (A must be authorized to vote in this election). A activates tampering software before submitting an arbitrary ballot. The software stops the http request and allows A to replace their original ballot with the target’s modified ballot, as shown in fig. 1 below. Helios will tally this election as two votes for the target’s choice.
+</p>
+<br><p>Several substitutions are necessary to format the modified ballot:</p>
+<li>+ -> %2B</li>
+<li>%20 -> +</li>
+<li>Change brackets and punctuation to %[ascii hex]
+</li>
+<li>remove spaces (only if mimicking the original message format is desired)
+</li>
+<h2>See it</h2><img src="Cortier Diagram 1.png" alt="Cortier Attack Diagram">
+<h2>What parts of Helios are affected</h2>
+<p>The availability of all votes on the bulletin board during the election enables this attack. The addition of q to the responses ensures that the hashes for two identical votes will be different, but does not affect the decryption, making no difference on the tally or verification. This attack should work with direct replays, but is easier to identify and sort out.  Cortier and Smyth proposed a solution that adds each voter’s unique ID to the challenges in each ballot. This would allow replayed ballots to be “weeded out” and they claim it is simple to implement. However, this was not included in Helios version 3 and is not visible in Helios version 4 so far.</p>
+<h2>Our Results</h2>
+<p>Our replication succeeded, and we were able to determine the contents of a vote by duplicating and altering its contents.
+We confirmed that Helios is still vulnerable to attacks on ballot secrecy. This attack is most effective towards very small elections, and it requires you to submit a vote for the same candidate as your target. This limits the immediate functionality of the attack, but in small elections it opens voters up to increased possibilities for coercion.
+</p>
+<h2>Expansion Attack</h2>
+<p>We wanted to test whether the attack could be expanded, so we attempted the following:</p>
+<li>Conduct an election with 2 voters and pick 1 to target</li>
+<li>Enter database and edit ballots with target + qi, where i=1,2,3..n-1. (similar to original attack)
+</li>
+<li>Tally the election.
+</li>
+<p>The built-in Helios tallying system rejected this attempt, which demonstrates an important distinction within the auditing process. As long as a secret key is held by trustees, partial tallies are prevented. In Simple Verifiable Elections (Benaloh, 2006), section 4.3 outlines the relationship between auditors and election officials, where transformations on ballot sets are verified without disclosure of trustee keys. Smyth/Cortier succeeds because a valid ballot is modified, tricking election officials into releasing data for manipulated results. An auditor can verify that an encrypted tally matches the homomorphic sum of the set of ballots, but cannot tally partial elections. Helios cannot resist attempts by the trustees to expose individual ballots, which is why threshold encryption is a recurring theme in Helios literature.</p>
+<h2>Implications</h2>
+<p>In the context of our threat model and the CIA triad, this attack primarily violates the Confidentiality of Helios, since arbitrary votes can be revealed. Cortier and Smyth define ballot secrecy and ballot independence, two terms that are helpful to our threat model.
+Ballot secrecy: a voter’s vote is not revealed to anyone.
+Ballot independence: Observing another voter’s interaction with the election system does not allow a voter to cast a meaningfully related vote.
+Thus, the attack essentially exploits Helios’ lack of ballot independence to violate voters’ ballot secrecy.
+</p>
+<p>In a real life scenario, the attack may be executed like such: in an election, an adversary can reveal the ballot of an arbitrary voter by corrupting otters registered at the same polling station. The corrupted voters replay the ballot of the target voter. Cortier and Smyth suggest that for a medium-size polling station with around 2000 voters, corrupting 19 voters is sufficient to reveal 1 voters’ vote. Thus, this attack would be most effective in small to medium-sized polling stations.
+</p>
+<p>To lesser extents, this attack also violates the Integrity of Helios. While Smyth and Cortier provided a few solutions to ensure ballot independence and prevent the attack, they have not been adopted by Helios. Thus, while Helios’ tally process is correct and fair, it cannot distinguish the replayed ballots produced by this attack, in turn weakening the integrity of the voting system. Moreover, in an extreme setting with sufficient corrupted voters, this attack may be used to influence the election outcome. This is not the intent of the attack, but nonetheless a breach of integrity. </p>
+<h2>Security Measures</h2>
+<p>Helios already supports voter aliases, which replaces names with tags like “V1” or “V2”. This adds some resistance to this threat, because it requires the adversary to have knowledge of the index of the target’s vote or the time that the target voted. </p>
+<p>In their research, Smyth and Cortier provide two solutions to their attack. One is weeding out replayed ballots by inspecting the ciphertext of encrypted ballots. This is possible because replayed ballots are created by manipulating the encryption scheme and the public key, which may be identified. The other solution is to bind a voter and their ballot. That is, Helios’ encryption scheme and ballot verifier are modified so that the voter id is incorporated into the encrypted ballot. This would completely nullify the attack since a replayed ballot would contain a replicated voter id, which can be easily checked by Helios’ ballot verifier.
+</p>
+<p>Smyth and Cortier claim the first solution of weeding out replayed ballots is preferred over the second one of binding voter id to votes. They justify the claim with the concept of ballot casting assurance.
+	(Ballot casting assurance: the ballot encryption device does not know the voter’s identity.)
+</p>
+<p>In Helios, the ballot encryption device is the browser script. This concept is important as “knowledge of the voter’s identity could be used to infer the likelihood of auditing and this information can be used to influence the behavior of the ballot encryption device”. The second solution violates ballot casting assurance as the voter id is revealed to Helios’ encryption and tallying process, although this can be alleviated by using voter aliases. In short, the first solution is preferred as it adheres to ballot casting assurance and is also easier to implement.
+</p>
+<p>Neither of the two solutions have been adopted by Helios. We also do not implement them, but instead propose an “overkill measure”: hiding the encrypted ballots and disabling the ballot verification feature. This is an overkill because while it negates Smyth and Cortier’s attack, it also defeats the purpose of Helios and its open-audit feature. However, experimenting with the degree of overkill led to interesting implications in confidentiality and integrity. This is discussed in more detail in our Smyth & Cortier defense section.
+</p>
+               </section>
+               <!-- ASIDE NAV 2 -->
+            </div>
+         </div>
+      </div>
+      <!-- FOOTER -->
+      <div class="line">
+        <footer class="box">
+              <div class="s-12 l-6">
+                 <p>Copyright 2019, Vision Design - graphic zoo</p>
+              </div>
+              <div class="s-12 l-6">
+                 <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+              </div>
+           </div>
+        </footer>
+      </div>
+      <script type="text/javascript" src="js/responsee.js"></script>
+   </body>
+</html>
