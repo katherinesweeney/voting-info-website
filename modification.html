@@ -197,8 +197,87 @@
                         <p>A conceptual point of future work is expanding the scale of verifiability and ballot secrecy. Currently we have three points on the scale, universal verifiability, individual verifiability, and no verifiability. Additional points can easily be conceptualized and implemented. For example, the administrator can restrict audit permission to a specific group of people. 
                             This might be useful in school or corporate elections.</p>
 
-                                    <h1>Accessibility: Synthesized research.</h1>
-               </section>
+                                    <h1>Accessibility Improvements</h1>
+
+                        <p>
+                           For any voting system to be considered fair and functional, it must be usable by every member of the voting body. In many elections, this could mean any individual of a responsible age, including those who are elderly, disabled, uneducated or unfamiliar with the technology being employed. 
+                        
+                           In most cases, voters should be able to perform this function without requiring training or prolonged instruction, so systems should be self-explanatory and easy to understand.
+                        </p><p>
+                           While EVMs have the potential for high levels of accessibility, they can also be uniquely difficult if not well implemented.
+                           A 2003 study conducted in Maryland examined accessibility of one of the state’s EVMs. It found that around 1 in 10 voters had significant concerns when using the system, ranging from readability issues to difficulty navigating their electronic ballot.
+                        </p>
+                        <br>
+                        <p>
+                           The 1.0 version of Helios performed even more poorly in this regard, with some studies showing that up to half of voters using the software were unable to complete the voting process. Issues such as overly-technical language and misleading error messages were main factors. While Helios 2.0 addresses many of the faults of its predecessor, it still demonstrates room for improvement.
+                        </p>
+                        <p>
+                           To identify key issues with the Helios 2.0 software, we conducted an informal survey of 16 Carleton students. We created an election for testing purposes and sent a link simultaneously to all participants. The only instructions provided were network requirements (some students would need to use a VPN to connect), an encouragement to find and use the audit feature, an encouragement to view the bulletin board, and an invitation to send any feedback to the admin email account. We reached out to all students who didn’t initially send feedback and ultimately received all 16 responses. 
+                        </p>
+                        <p>
+We combined this research with two other pieces of research. The first was a cognitive walkthrough of Helios’ voting procedure based on previous studies, and the second was a study of a similar EVM being tested for the same kind of usability concerns. By synthesizing the finding of these two sources with our own work, we identified a number of key issues to address.
+
+                        </p>
+                        <ol>
+                           <li>The 'Audit' feature was difficult to locate and understand. It also confused voters about whether their vote had been successfully cast.</li>
+                           <li>The button to log in was difficult to find, and as a result, many users were not asked to log in until they tried to submit their ballot. This also confused voters about the status of their vote.</li>
+                           <li>Many parts of the process, such as encryption, are not self-explanatory and leave voters confused and lacking confidence in the system.</li>
+                           <li>The process of filling out a ballot is difficult, with inconsistent navigation buttons and strange checkbox behavior.</li>
+                           <li>The process suffered from using inconsistent language throughout, which lead to general confusion and lack of trust</li>
+                        </ol>
+
+                        <p>
+                           While many other issues were identified, these were the ones that presented the most serious problems without requiring major overhauls. 
+                        </p>
+                        <br>
+                        <p>
+                           The first of these was to update the audit feature to make it easier to use and understand. Previously, Helios displayed the option to audit off to the side as an ‘optional’ feature, and only provided a (brief) explanation after the link is clicked. We moved the audit button down to appear alongside “Submit this Vote” and provided explanatory text for each choice, which further clarifies that picking one option exempts the user from using the other, and specifies that after auditing, a new ballot will need to be cast. Additionally, the word “verify” was substituted for “audit” where applicable, both here and on the audit page.
+                        </p>
+                        <br>
+                        <img src="img/accessmodverify.png" alt="Audit Process">
+                        <br>
+                        <p>
+                           Logging in is also a difficult process for some users. Helios divides its content pane into both a header and footer, with the login button and indicator exclusively found in the footer. We updated this by moving the login button and indicator into the header, in the upper right corner to correspond with current web standards.
+                           The message tells the user they need to either log in now using the button in the top right, or log when prompted during ballot submission.
+                        </p>
+                        <br>
+                        <img src="img/accessmodlogin.png" alt="Audit Process">
+                        <br>
+                        <p>
+                           To clarify when and how logging in must be performed, a message now displays above the “Vote in this election” button if the user it not yet logged in.
+                        </p>
+                        <br>
+                        <img src="img/accessmodloggedout.png" alt="Audit Process">
+                        <br>
+                        <p>
+                           The arrangement and language used in the ballot-completion step was updated to be more clear and consistent, and a message was included informing voters how to change their selections.
+                           The "Next" button (shown here in red) now always appears in the same spot, the option to "Proceed" is now "Encrypt Ballot for Submission" and only is visible on the last question.
+                        </p>
+                        <br>
+                        <img src="img/accessmodballot.png" alt="Audit Process">
+                        <br>
+                        <h3>Future work</h3>
+                        <p>
+                           While these fixes address some of the major issues, there are a number that our team was aware of but could not address to due time or
+                           technical limitations. Among these include:
+                           <ul>
+                              <li>Time zone display flexibility</li>
+                              <li>Better checkboxes in the ballot submission process</li>
+                              <li>Clearer indications of what step in the process the user is currently in</li>
+                              <li>A warning for users about to submit a blank ballot</li>
+                              <li>An indicator on the main page telling users if their vote appears on the bulletin board</li>
+                              <li>Better feedback to election creator when adding questions to the ballot</li>
+                              <li>Better functionality for the "Help" button (currently just drafts an email to the election creator)</li>
+                              <li>More explanation, especially for the smart-ballot tracker and bulletin board</li>
+                              <li>Further language cleanup</li>
+                           </ul>
+
+                         </p>
+                         <p>
+                           Further work on this project should seek to make these changes and further examine how these changes have affected the usability of the software.
+                        
+                         </p>
+                        </section>
                <!-- ASIDE NAV 2 -->
             </div>
          </div>
